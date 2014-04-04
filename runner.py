@@ -1,6 +1,7 @@
 from reader import Reader
 from informationfiller import InformationFiller
 from pass1 import ExactMatchSieve
+from pass2 import PreciseConstructsSieve
 
 def printClusterDetails():
     """Prints head mention and mentions list for each cluster"""
@@ -35,3 +36,8 @@ if verbose:
     print "\nAfter Pass 1:\n"
     printClusterDetails()
 
+sieve = PreciseConstructsSieve()
+sieve.process(doc)
+if verbose:
+    print "\nAfter Pass 2:\n"
+    printClusterDetails()
