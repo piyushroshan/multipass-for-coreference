@@ -1,3 +1,5 @@
+#! /usr/bin/env python
+
 from reader import Reader
 from informationfiller import InformationFiller
 from pass1 import ExactMatchSieve
