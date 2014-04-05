@@ -1,5 +1,5 @@
 from sieve import Sieve
-from decorators import override
+from decorators import overrides
 
 class ExactMatchSieve(Sieve):
     """Pass 1 of this multi-sieve model.
@@ -12,7 +12,7 @@ class ExactMatchSieve(Sieve):
     def __init__(self):
         pass
     
-    @override(Sieve)
+    @overrides(Sieve)
     def process(self, document):
         """Merges cluster pairs if their head mentions match exactly"""
         

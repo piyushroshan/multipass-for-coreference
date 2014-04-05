@@ -4,6 +4,11 @@ from reader import Reader
 from informationfiller import InformationFiller
 from pass1 import ExactMatchSieve
 from pass2 import PreciseConstructsSieve
+from pass3 import StrictHeadMatchSieve
+from pass4 import StrictHeadMatchSieveVariant1
+from pass5 import StrictHeadMatchSieveVariant2
+from pass6 import RelaxedHeadMatchSieve
+from pass7 import PronounSieve
 
 def printClusterDetails():
     """Prints head mention and mentions list for each cluster"""
@@ -43,3 +48,35 @@ sieve.process(doc)
 if verbose:
     print "\nAfter Pass 2:\n"
     printClusterDetails()
+
+sieve = StrictHeadMatchSieve()
+sieve.process(doc)
+if verbose:
+    print"\nAfter Pass 3:\n"
+    printClusterDetails()
+
+sieve = StrictHeadMatchSieveVariant1()
+sieve.process(doc)
+if verbose:
+    print"\nAfter Pass 4:\n"
+    printClusterDetails()
+
+sieve = StrictHeadMatchSieveVariant2()
+sieve.process(doc)
+if verbose:
+    print"\nAfter Pass 5:\n"
+    printClusterDetails()
+    
+#sieve = RelaxedHeadMatchSieve()
+#sieve.process(doc)
+#if verbose:
+#    print"\nAfter Pass 6:\n"
+#    printClusterDetails()
+
+#sieve = PronounSieve()
+#sieve.process(doc)
+#if verbose:
+#    print"\nAfter Pass 7:\n"
+#    printClusterDetails()
+
+print "Coreference Resolution Pass 1 to 5 Complete!"

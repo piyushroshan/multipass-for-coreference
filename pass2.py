@@ -1,5 +1,5 @@
 from sieve import Sieve
-from decorators import override
+from decorators import overrides
 from informationfiller import InformationFiller
 import codecs
 
@@ -66,7 +66,7 @@ class PreciseConstructsSieve(Sieve):
         self.__mentionClusterList.remove(b)
         self.__mentionToClusterMap[b] = a
 
-    @override(Sieve)
+    @overrides(Sieve)
     def process(self, docObj):
         """Merges clusters by each relation of pass 2 sequentially"""
 
